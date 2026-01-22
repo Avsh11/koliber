@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: praca.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter001.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter002.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter003.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter004.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter005.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: chapters/chapter006.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+The style file: plain.bst
+Reallocating 'name_of_file' (item size: 1) to 13 items.
+Database file #1: bibliografia.bib
+Warning--to sort, need author or key in Unsplash
+Warning--to sort, need author or key in StackOverflow
+Warning--to sort, need author or key in W3schools
+Warning--to sort, need author or key in Pexels
+Warning--to sort, need author or key in Freepik
+Warning--to sort, need author or key in Coolors
+Warning--to sort, need author or key in GoogleFonts
+Warning--to sort, need author or key in ChatGPT
+You've used 8 entries,
+            2118 wiz_defined-function locations,
+            536 strings with 4639 characters,
+and the built_in function-call counts, 1308 in all, are:
+= -- 120
+> -- 8
+< -- 0
++ -- 8
+- -- 0
+* -- 50
+:= -- 145
+add.period$ -- 16
+call.type$ -- 8
+change.case$ -- 24
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 56
+empty$ -- 185
+format.name$ -- 0
+if$ -- 321
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 0
+newline$ -- 35
+num.names$ -- 0
+pop$ -- 72
+preamble$ -- 1
+purify$ -- 16
+quote$ -- 0
+skip$ -- 56
+stack$ -- 0
+substring$ -- 40
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 8
+while$ -- 0
+width$ -- 9
+write$ -- 66
+(There were 8 warnings)

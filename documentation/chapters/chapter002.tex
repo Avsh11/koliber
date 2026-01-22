@@ -1,0 +1,14 @@
+\chapter{Opis założeń projektu}
+
+Celem projektu było stworzenie bezpiecznego i anonimowego komunikatora sieciowego przy użyciu języka programowania \textbf{Python}. Program ma za zadanie umożliwić wielu użytkownikom jednoczesną wymianę wiadomości tekstowych w czasie rzeczywistym, wykorzystując arhitekturę wielowątkową również zaimplementowaną używając wspomnianego wcześniej języka \textbf{Python} dobierając wcześniej odpowiednie moduły takie jak \texttt{threading} czy \texttt{socket}. Program ma działać w środowisku rozproszonym, łącząc maszyny o różnych systemach operacyjnych pracując wewnątrz wirtualnej infrastruktury sieciowej.
+
+Podstawowym problemem, który zostanie rozwiązany przez realizację tego projektu, jest zagrożenie prywatności w sieci oraz konieczność udostępniania danych osobowych w tradycyjnych systemach komunikacji. Obecnie wiele krajów zachodnich takich jak chociażby \textit{Wielka Brytania} coraz częściej z wrogością zwraca się do prywatnej wymiany informacji w obawie o to iż użytkownicy będą komunikować między sobą informacje nie będące po drodze narracji rządowej. Projekt inspirując się forum obrazkowym \textit{4chan} rozwiązuje ten problem poprzez brak konieczności zakładania kont oraz wykorzystanie tymczasowych identyfikatorów sesji, które są generowane losowo przez serwer i usuwane natychmiast po rozłączeniu użytkownika z pamięci operacyjnej węzła.
+
+Aby problem został skutecznie rozwiązany, potencjalny zespół musi posiadać wiedzę z zakresu architektury sieciowej \textbf{TCP/IP}, modeluo \textbf{ISO/OSI} (w szczególności warstwy transportowej i aplikacji) oraz podstawowej obsługi wątków.
+
+Rozwiązanie problemu przebiegło w kilku zdefiniowanych krokach. W pierwszej kolejności nastąpiło zaprojektowanie topologii sieciowej w środowisku \texttt{VirtualBox}. Kolejnym krokiem było zaimplementowanie logicznej warstwy serwera, odpowiedzialnego za akceptowanie połączeń i przesyłanie komunikatów. Następnie wdrożono obsługę wielu wątków oraz system anonimowego przydzielania identyfikatorów. Końcowym etapem było stworzenie podstawowego interfejsu \textbf{CLI} dla klientów, gdzie Ci będą mogli odróżniać wiadomości swoje od cudzych za pośrednictwem kolorów.
+
+\section{Wymagania funkcjonalne}
+
+\section{Wymagania niefunkcjonalne}
+
