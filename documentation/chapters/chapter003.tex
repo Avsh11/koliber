@@ -1,4 +1,107 @@
 \chapter{Opis struktury projektu}
-
 \section{Struktura plików}
+Projekt został zorganizowany w sposób modułowy, oddzielając kod źródłowy od plików dokumentacji. Poniżej przedstawiona została struktura katalogów w formie drzewa:
+\vspace{0.5cm}
+\dirtree{%
+.1 koliber/.
+.2 documentation/ \DTcomment{Dokumentacja techniczna projektu}.
+.2 src/ \DTcomment{Katalog z kodem źródłowym}.
+.3 client.py \DTcomment{Aplikacja kliencka}.
+.3 server.py \DTcomment{Skrypt serwera}.
+}
+\vspace{0.5cm}
+\vspace{0.5cm}
 \section{Najważniejsze metody}
+\subsection{Plik server.py}
+\begin{lstlisting}[language=Python, caption=Metoda generująca unikalne ID sesji]
+def generate_id():
+    pool = string.ascii_uppercase + string.digits
+    id_result = ""
+    for i in range(6):
+        char = random.choice(pool)
+        id_result = id_result + char
+    return id_result
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Zarządzanie sesją i procesem Handshake]
+def handle_client(user, client_address):
+    session_id = generate_id()
+    while session_id in assigned_id:
+        session_id = generate_id()
+    
+    assigned_id.append(session_id)
+    
+    user.send(("SET_ID:" + session_id).encode('utf-8'))
+    
+    handle_broadcast(("Uzytkownik o ID " + session_id + " dolaczyl.").encode('utf-8'), user)
+    print("[UBUNTU]: Adres: " + str(client_address) + " ID: " + session_id + " dolaczyl. ")
+
+    while True:
+        try:
+            data = user.recv(1024)
+            if not data:
+                break
+            
+            text = data.decode('utf-8')
+            full_message = "Anon#" + session_id + ": " + text
+            handle_broadcast(full_message.encode('utf-8'), user)
+            
+        except Exception as e:
+            print("ERROR: uzytkownik " + session_id + " " + str(e))
+            break
+
+    print("[UBUNTU]: ID: " + session_id + " sie rozlaczyl. ")
+    
+    if session_id in assigned_id:
+        assigned_id.remove(session_id)
+    if user in user_sockets:
+        user_sockets.remove(user)
+    
+    handle_broadcast(("Uzytkownik o ID " + session_id + " wyszedl.").encode('utf-8'), user)
+    user.close()
+\end{lstlisting}
+
+\subsection{Plik client.py}
+
+\begin{lstlisting}[language=Python, caption=Asynchroniczny wątek odbiorczy z obsługą komunikatów systemowych]
+def handle_messages():
+    global my_id
+    while True:
+        try:
+            received_bytes = client.recv(1024)
+            if not received_bytes:
+                break
+                
+            message = received_bytes.decode('utf-8')
+            
+            if message.startswith("SET_ID:"):
+                my_id = message.split(":")[1]
+            elif "dolaczyl" in message:
+                print("\r" + CLEAR + YELLOW + BOLD + message + RESET)
+                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+            elif "wyszedl" in message:
+                print("\r" + CLEAR + RED + BOLD + message + RESET)
+                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+            else:
+                print("\r" + CLEAR + message)
+                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+                
+        except Exception as e:
+            print("ERROR: odebranie wiadomosci" + str(e))
+            break
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python, caption=Pętla wysyłania z mechanizmem nadpisywania wejścia użytkownika]
+while True:
+    try:
+        current_prompt = GREEN + "TY (ID-" + my_id + "): " + RESET
+        msg_to_send = input(current_prompt)
+        
+        if msg_to_send:
+            print(UP + "\r" + CLEAR + GREEN + "TY (ID-" + my_id + "): " + msg_to_send + RESET)
+            client.send(msg_to_send.encode('utf-8'))
+            
+    except Exception as e:
+        print("ERROR: blad wyslania " + str(e))
+        break
+\end{lstlisting}

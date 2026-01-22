@@ -17,53 +17,49 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: plain.bst
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Database file #1: bibliografia.bib
-Warning--to sort, need author or key in Unsplash
 Warning--to sort, need author or key in StackOverflow
-Warning--to sort, need author or key in W3schools
-Warning--to sort, need author or key in Pexels
-Warning--to sort, need author or key in Freepik
-Warning--to sort, need author or key in Coolors
-Warning--to sort, need author or key in GoogleFonts
-Warning--to sort, need author or key in ChatGPT
-You've used 8 entries,
+Warning--to sort, need author or key in NeuralNine
+Warning--to sort, need author or key in W3Schools
+Warning--to sort, need author or key in Python
+You've used 4 entries,
             2118 wiz_defined-function locations,
-            536 strings with 4639 characters,
-and the built_in function-call counts, 1308 in all, are:
-= -- 120
-> -- 8
+            520 strings with 4416 characters,
+and the built_in function-call counts, 664 in all, are:
+= -- 60
+> -- 4
 < -- 0
-+ -- 8
++ -- 4
 - -- 0
-* -- 50
-:= -- 145
-add.period$ -- 16
-call.type$ -- 8
-change.case$ -- 24
+* -- 26
+:= -- 77
+add.period$ -- 8
+call.type$ -- 4
+change.case$ -- 12
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 56
-empty$ -- 185
+cite$ -- 8
+duplicate$ -- 28
+empty$ -- 93
 format.name$ -- 0
-if$ -- 321
+if$ -- 161
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 4
 missing$ -- 0
-newline$ -- 35
+newline$ -- 19
 num.names$ -- 0
-pop$ -- 72
+pop$ -- 36
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 8
 quote$ -- 0
-skip$ -- 56
+skip$ -- 28
 stack$ -- 0
-substring$ -- 40
-swap$ -- 8
+substring$ -- 20
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 8
+type$ -- 16
+warning$ -- 4
 while$ -- 0
-width$ -- 9
-write$ -- 66
-(There were 8 warnings)
+width$ -- 5
+write$ -- 34
+(There were 4 warnings)

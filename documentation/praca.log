@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  22 JAN 2026 18:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  22 JAN 2026 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -673,24 +673,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (praca.aux (chapters/chapter001.aux) (chapters/chapter002.aux) (chapters/chapter003.aux) (chapters/chapter004.aux) (chapters/chapter005.aux) (chapters/chapter006.aux))
 \openout1 = `praca.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 201.
-LaTeX Font Info:    ... okay on input line 201.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 211.
+LaTeX Font Info:    ... okay on input line 211.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count356
@@ -753,12 +753,12 @@ Package caption Info: End \AtBeginDocument code.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-polish.trsl
 File: translations-basic-dictionary-polish.trsl (polish translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 201.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `polish'. on input line 211.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 201.
-Package hyperref Info: Link coloring OFF on input line 201.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 211.
+Package hyperref Info: Link coloring OFF on input line 211.
  (praca.out) (praca.out)
 \@outlinefile=\write3
 \openout3 = `praca.out'.
@@ -773,37 +773,37 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 203.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 213.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 203.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 213.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 203.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 213.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figures/ur.jpg, id=63, 134.00063pt x 134.00063pt>
+<figures/ur.jpg, id=79, 134.00063pt x 134.00063pt>
 File: figures/ur.jpg Graphic file (type jpg)
 <use figures/ur.jpg>
-Package pdftex.def Info: figures/ur.jpg  used on input line 203.
+Package pdftex.def Info: figures/ur.jpg  used on input line 213.
 (pdftex.def)             Requested size: 93.79977pt x 93.79977pt.
 
-Overfull \hbox (1.90001pt too wide) in paragraph at lines 203--203
+Overfull \hbox (1.90001pt too wide) in paragraph at lines 213--213
 $[]$  $[]$ 
  []
 
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 203.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 213.
 [1
 
 {C:/Users/PC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc} <./figures/ur.jpg>]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.203 \titlepages
+l.213 \titlepages
                   [1
 
 
@@ -835,32 +835,84 @@ Rozdzia\l  2.
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 3.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)) [7
+)
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 13.
+ (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [7
 
 
 
 
-]
+]) [8]
 \openout2 = `chapters/chapter003.aux'.
 
  (chapters/chapter003.tex
 Rozdzia\l  3.
-) [8
+(C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 16.
+
+Overfull \hbox (14.81314pt too wide) in paragraph at lines 36--37
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.01309pt too wide) in paragraph at lines 37--39
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9
 
 
 
 
 ]
+Overfull \hbox (10.01309pt too wide) in paragraph at lines 60--61
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (24.41324pt too wide) in paragraph at lines 101--102
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[10]) [11]
 \openout2 = `chapters/chapter004.aux'.
 
  (chapters/chapter004.tex
 Rozdzia\l  4.
-) [9
+<figures/4.1.png, id=229, 1084.05pt x 639.13782pt>
+File: figures/4.1.png Graphic file (type png)
+<use figures/4.1.png>
+Package pdftex.def Info: figures/4.1.png  used on input line 8.
+(pdftex.def)             Requested size: 341.43437pt x 201.30022pt.
+<figures/4.2.png, id=232, 1084.05pt x 640.64343pt>
+File: figures/4.2.png Graphic file (type png)
+<use figures/4.2.png>
+Package pdftex.def Info: figures/4.2.png  used on input line 16.
+(pdftex.def)             Requested size: 341.43437pt x 201.77441pt.
+<figures/4.3.png, id=234, 1084.05pt x 638.385pt>
+File: figures/4.3.png Graphic file (type png)
+<use figures/4.3.png>
+Package pdftex.def Info: figures/4.3.png  used on input line 25.
+(pdftex.def)             Requested size: 341.43437pt x 201.06311pt.
+
+Underfull \vbox (badness 2961) has occurred while \output is active []
+
+ [12
 
 
 
 
-]
+ <./figures/4.1.png> <./figures/4.2.png>]
+<figures/4.4.png, id=244, 1084.05pt x 636.87938pt>
+File: figures/4.4.png Graphic file (type png)
+<use figures/4.4.png>
+Package pdftex.def Info: figures/4.4.png  used on input line 33.
+(pdftex.def)             Requested size: 341.43437pt x 200.58891pt.
+) [13 <./figures/4.3.png> <./figures/4.4.png>]
 \openout2 = `chapters/chapter005.aux'.
 
  (chapters/chapter005.tex
@@ -875,7 +927,7 @@ Underfull \hbox (badness 1303) in paragraph at lines 10--11
 \T1/pcr/m/n/10 python3 client.py (Linux) \T1/ptm/m/n/10 uprzed-nio prze-cho-dz¡c w od-po-wied-ni¡ ±cie»k¦ w ter-mi-
  []
 
-) [10
+) [14
 
 
 
@@ -885,7 +937,7 @@ Underfull \hbox (badness 1303) in paragraph at lines 10--11
 
  (chapters/chapter006.tex
 Rozdzia\l  6.
-) [11
+) [15
 
 
 
@@ -893,9 +945,9 @@ Rozdzia\l  6.
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 235.
+(hyperref)                be the same. Added a new anchor on input line 245.
 
-(praca.bbl) [12
+(praca.bbl) [16
 
 
 
@@ -903,7 +955,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 \tf@lof=\write5
 \openout5 = `praca.lof'.
 
- [13
+ [17
 
 ]
 
@@ -916,20 +968,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: D62BAA37A8D602162FC53C8E11E7F691;2838.
+(rerunfilecheck)             Checksum: 8113709C55396EF03FF6CF63E999BB73;3634.
  ) 
 Here is how much of TeX's memory you used:
- 23719 strings out of 474486
- 452886 string characters out of 5745170
- 1933542 words of memory out of 5000000
- 45559 multiletter control sequences out of 15000+600000
- 601723 words of font info for 74 fonts, out of 8000000 for 9000
+ 24367 strings out of 474486
+ 460296 string characters out of 5745170
+ 1994542 words of memory out of 5000000
+ 46101 multiletter control sequences out of 15000+600000
+ 620560 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,11n,94p,902b,1099s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (11 pages, 123479 bytes).
+ 88i,13n,94p,902b,2694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on praca.pdf (15 pages, 1035862 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 126 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 178 words of extra memory for PDF output out of 10000 (max. 10000000)
 
