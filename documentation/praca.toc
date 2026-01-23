@@ -8,6 +8,7 @@
 \contentsline {section}{\numberline {3.2}Najważniejsze metody}{9}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Plik server.py}{9}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Plik client.py}{10}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Moduły i oprogramowanie}{11}{section.3.3}%
 \contentsline {chapter}{\numberline {4}Prezentacja działania i testy}{12}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Serwer Ubuntu: komunikaty rozpoczęcia pracy i dołączenia}{12}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Serwer Ubuntu: komunikaty rozłączania się użytkowników}{12}{section.4.2}%

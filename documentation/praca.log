@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  22 JAN 2026 23:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  23 JAN 2026 10:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -785,7 +785,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 213.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figures/ur.jpg, id=79, 134.00063pt x 134.00063pt>
+<figures/ur.jpg, id=83, 134.00063pt x 134.00063pt>
 File: figures/ur.jpg Graphic file (type jpg)
 <use figures/ur.jpg>
 Package pdftex.def Info: figures/ur.jpg  used on input line 213.
@@ -883,17 +883,17 @@ Overfull \hbox (24.41324pt too wide) in paragraph at lines 101--102
 
  (chapters/chapter004.tex
 Rozdzia\l  4.
-<figures/4.1.png, id=229, 1084.05pt x 639.13782pt>
+<figures/4.1.png, id=234, 1084.05pt x 639.13782pt>
 File: figures/4.1.png Graphic file (type png)
 <use figures/4.1.png>
 Package pdftex.def Info: figures/4.1.png  used on input line 8.
 (pdftex.def)             Requested size: 341.43437pt x 201.30022pt.
-<figures/4.2.png, id=232, 1084.05pt x 640.64343pt>
+<figures/4.2.png, id=237, 1084.05pt x 640.64343pt>
 File: figures/4.2.png Graphic file (type png)
 <use figures/4.2.png>
 Package pdftex.def Info: figures/4.2.png  used on input line 16.
 (pdftex.def)             Requested size: 341.43437pt x 201.77441pt.
-<figures/4.3.png, id=234, 1084.05pt x 638.385pt>
+<figures/4.3.png, id=239, 1084.05pt x 638.385pt>
 File: figures/4.3.png Graphic file (type png)
 <use figures/4.3.png>
 Package pdftex.def Info: figures/4.3.png  used on input line 25.
@@ -907,7 +907,7 @@ Underfull \vbox (badness 2961) has occurred while \output is active []
 
 
  <./figures/4.1.png> <./figures/4.2.png>]
-<figures/4.4.png, id=244, 1084.05pt x 636.87938pt>
+<figures/4.4.png, id=249, 1084.05pt x 636.87938pt>
 File: figures/4.4.png Graphic file (type png)
 <use figures/4.4.png>
 Package pdftex.def Info: figures/4.4.png  used on input line 33.
@@ -968,20 +968,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: 8113709C55396EF03FF6CF63E999BB73;3634.
+(rerunfilecheck)             Checksum: 4B26D4207832726C05C35CA3CAAC3400;3813.
  ) 
 Here is how much of TeX's memory you used:
- 24367 strings out of 474486
- 460296 string characters out of 5745170
+ 24369 strings out of 474486
+ 460320 string characters out of 5745170
  1994542 words of memory out of 5000000
- 46101 multiletter control sequences out of 15000+600000
+ 46102 multiletter control sequences out of 15000+600000
  620560 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,13n,94p,902b,2694s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (15 pages, 1035862 bytes).
+Output written on praca.pdf (15 pages, 1037366 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
- 178 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 134 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
