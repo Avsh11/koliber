@@ -33,3 +33,31 @@ Komunikat informujący o rozłączeniu się jednego z użytkowników widoczny je
     \includegraphics[width=0.8\textwidth]{figures/4.4.png}
     \caption{Rozłączenie użytkownika - komunikat}\label{rys 4.4}
 \end{figure}
+
+\subsection{Przywracanie historii - treść}
+Oboje użytkowników zaczęło nową sesję. Natomiast tylko użytkownik o ID \texttt{ACA6MQ} zapamiętał swoje ID i użyje je do przywrócenia konwersacji. Warto zobaczyć co dzieje się na terminalu maszyny \texttt{Linux Mint}, która rozpoczęła nową sesje. Wynik operacji widoczny jest na obrazku poniżej - \textbf{rys. \ref{rys 4.5}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/4.5.png}
+    \caption{Przywrócenie historii, gdzie konkretny ID uczestniczył}\label{rys 4.5}
+\end{figure}
+
+\subsection{Dostępność historii dla nowych użytkowników - zachowanie}
+Zachowanie to przedstawione jest na obrazku powyżej - \textbf{rys. \ref{rys 4.5}}
+\subsection{Zabezpieczenie - co jeśli ktoś jest nowy i chce przywrócić sesję?}
+W przypadku, gdy ktoś uzna, że nie chce zacząć nowej sesji i wpisze nieistniejące ID, zostanie mu przydzielone nowe ID losowe co spowoduje ten sam proces co przy stworzeniu nowej sesji (Opcja TAK). Efekt widoczny jest na obrazkach poniżej - \textbf{rys. \ref{rys 4.6}, rys. \ref{rys 4.7}, rys. \ref{rys 4.8}}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/4.6.png}
+    \caption{Czy chcę rozpocząć nową sesję? (N)}\label{rys 4.6}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/4.7.png}
+    \caption{Podanie nieistniejącego ID}\label{rys 4.7}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/4.8.png}
+    \caption{Efekt końcowy - rozpoczęcie nowej sesji z losowymi ID}\label{rys 4.8}
+\end{figure}

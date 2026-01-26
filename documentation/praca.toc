@@ -15,7 +15,10 @@
 \contentsline {section}{\numberline {4.3}Działanie aplikacji z perspektywy maszyn klienckich}{13}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Przesyłanie wiadomości i komunikat dołączenia}{13}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Rozłączenie się - komunikat}{13}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Instrukcja uruchomieniowa}{14}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Podsumowanie}{15}{chapter.6}%
-\contentsline {section}{\textbf {Bibliografia}}{16}{section*.5}%
-\contentsline {section}{\textbf {Spis rysunków}}{17}{chapter*.6}%
+\contentsline {subsection}{\numberline {4.3.3}Przywracanie historii - treść}{14}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Dostępność historii dla nowych użytkowników - zachowanie}{14}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Zabezpieczenie - co jeśli ktoś jest nowy i chce przywrócić sesję?}{14}{subsection.4.3.5}%
+\contentsline {chapter}{\numberline {5}Instrukcja uruchomieniowa}{16}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Podsumowanie}{17}{chapter.6}%
+\contentsline {section}{\textbf {Bibliografia}}{18}{section*.9}%
+\contentsline {section}{\textbf {Spis rysunków}}{19}{chapter*.10}%

@@ -1,6 +1,8 @@
 \chapter{Opis struktury projektu}
+
 \section{Struktura plików}
 Projekt został zorganizowany w sposób modułowy, oddzielając kod źródłowy od plików dokumentacji. Poniżej przedstawiona została struktura katalogów w formie drzewa:
+
 \vspace{0.5cm}
 \dirtree{%
 .1 koliber/.
@@ -10,104 +12,116 @@ Projekt został zorganizowany w sposób modułowy, oddzielając kod źródłowy 
 .3 server.py \DTcomment{Skrypt serwera}.
 }
 \vspace{0.5cm}
-\vspace{0.5cm}
+
 \section{Najważniejsze metody}
+
+W tej sekcji omówiono kluczowe fragmenty implementacji odpowiedzialne za logikę sieciową, persystencję danych oraz wielowątkową obsługę użytkowników.
+
 \subsection{Plik server.py}
-\begin{lstlisting}[language=Python, caption=Metoda generująca unikalne ID sesji]
-def generate_id():
-    pool = string.ascii_uppercase + string.digits
-    id_result = ""
-    for i in range(6):
-        char = random.choice(pool)
-        id_result = id_result + char
-    return id_result
+
+\begin{lstlisting}[language=Python, caption=Logika przekaźnika rozsyłająca wiadomości]
+def handle_broadcast(message_bytes, sender_socket):
+    save_to_history(message_bytes.decode('utf-8'))
+    
+    for user_socket in user_sockets[:]:
+        if user_socket != sender_socket:
+            try:
+                user_socket.send(message_bytes)
+            except Exception as e:
+                print("ERROR: rozsylanie wiadomosci" + str(e))
+                if user_socket in user_sockets:
+                    user_sockets.remove(user_socket)
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, caption=Zarządzanie sesją i procesem Handshake]
+\begin{lstlisting}[language=Python, caption=Zarządzanie sesją oraz mechanizm przywracania historii]
 def handle_client(user, client_address):
-    session_id = generate_id()
-    while session_id in assigned_id:
-        session_id = generate_id()
-    
+    try:
+        choice_data = user.recv(1024).decode('utf-8')
+        if choice_data == "NEW":
+            session_id = generate_id()
+            while session_id in assigned_id:
+                session_id = generate_id()
+        else:
+            parts = choice_data.split(":")
+            if len(parts) > 1 and parts[1] != "":
+                session_id = parts[1]
+                found_in_logs = False
+                if os.path.exists("chat_history.txt"):
+                    with open("chat_history.txt", "r", encoding='utf-8') as file:
+                        if session_id in file.read():
+                            found_in_logs = True
+                
+                if found_in_logs and session_id not in assigned_id:
+                    with open("chat_history.txt", "r", encoding='utf-8') as file:
+                        for line in file:
+                            user.send(("HIST:" + line.strip() + "\n").encode('utf-8'))
+                            time.sleep(0.01)
+                else:
+                    session_id = generate_id()
+                    while session_id in assigned_id:
+                        session_id = generate_id()
+            else:
+                session_id = generate_id()
+                while session_id in assigned_id:
+                    session_id = generate_id()
+    except Exception as e:
+        print("ERROR przy logowaniu: " + str(e))
+        user.close()
+        return
+
     assigned_id.append(session_id)
-    
-    user.send(("SET_ID:" + session_id).encode('utf-8'))
-    
+    user.send(("SET_ID:" + session_id + "\n").encode('utf-8'))
     handle_broadcast(("Uzytkownik o ID " + session_id + " dolaczyl.").encode('utf-8'), user)
-    print("[UBUNTU]: Adres: " + str(client_address) + " ID: " + session_id + " dolaczyl. ")
-
-    while True:
-        try:
-            data = user.recv(1024)
-            if not data:
-                break
-            
-            text = data.decode('utf-8')
-            full_message = "Anon#" + session_id + ": " + text
-            handle_broadcast(full_message.encode('utf-8'), user)
-            
-        except Exception as e:
-            print("ERROR: uzytkownik " + session_id + " " + str(e))
-            break
-
-    print("[UBUNTU]: ID: " + session_id + " sie rozlaczyl. ")
-    
-    if session_id in assigned_id:
-        assigned_id.remove(session_id)
-    if user in user_sockets:
-        user_sockets.remove(user)
-    
-    handle_broadcast(("Uzytkownik o ID " + session_id + " wyszedl.").encode('utf-8'), user)
-    user.close()
 \end{lstlisting}
 
 \subsection{Plik client.py}
 
-\begin{lstlisting}[language=Python, caption=Asynchroniczny wątek odbiorczy z obsługą komunikatów systemowych]
+\begin{lstlisting}[language=Python, caption=Wątek odbiorczy z buforowaniem historii]
 def handle_messages():
     global my_id
     while True:
         try:
-            received_bytes = client.recv(1024)
-            if not received_bytes:
-                break
-                
-            message = received_bytes.decode('utf-8')
+            received_bytes = client.recv(4096)
+            if not received_bytes: break
+            raw_data = received_bytes.decode('utf-8')
+            messages = raw_data.split('\n')
             
-            if message.startswith("SET_ID:"):
-                my_id = message.split(":")[1]
-            elif "dolaczyl" in message:
-                print("\r" + CLEAR + YELLOW + BOLD + message + RESET)
-                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
-            elif "wyszedl" in message:
-                print("\r" + CLEAR + RED + BOLD + message + RESET)
-                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
-            else:
-                print("\r" + CLEAR + message)
-                print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
-                
+            for msg in messages:
+                if not msg: continue
+                if msg.startswith("SET_ID:"):
+                    my_id = msg.split(":")[1].strip()
+                elif msg.startswith("HIST:"):
+                    history_buffer.append(msg.replace("HIST:", "").strip())
+                elif "dolaczyl" in msg or "wyszedl" in msg:
+                    print("\r" + CLEAR + YELLOW + BOLD + msg + RESET)
+                    print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+                else:
+                    print("\r" + CLEAR + msg)
+                    print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
         except Exception as e:
-            print("ERROR: odebranie wiadomosci" + str(e))
+            print("ERROR: odebranie wiadomosci " + str(e))
             break
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, caption=Pętla wysyłania z mechanizmem nadpisywania wejścia użytkownika]
-while True:
-    try:
-        current_prompt = GREEN + "TY (ID-" + my_id + "): " + RESET
-        msg_to_send = input(current_prompt)
-        
-        if msg_to_send:
-            print(UP + "\r" + CLEAR + GREEN + "TY (ID-" + my_id + "): " + msg_to_send + RESET)
-            client.send(msg_to_send.encode('utf-8'))
-            
-    except Exception as e:
-        print("ERROR: blad wyslania " + str(e))
-        break
+\begin{lstlisting}[language=Python, caption=Synchronizacja i kolorowanie przywróconej historii]
+while my_id == "???":
+    time.sleep(0.1)
+
+decoration()
+print(ASCII_LOGO)
+
+if history_buffer:
+    print(YELLOW + "--- PRZYWROCONA HISTORIA CZATU ---" + RESET)
+    for h in history_buffer:
+        if ("#" + my_id + ":") in h:
+            print(GREEN + h + RESET)
+        else:
+            print(h)
+    print(YELLOW + "----------------------------------" + RESET)
 \end{lstlisting}
 
 \section{Moduły i oprogramowanie}
-Moduły użyte w języku \textbf{Python} oraz całość użytego oprogramowania znajduję się na liście poniżej:
+Moduły użyte w języku \textbf{Python} oraz całość użytego oprogramowania znajdują się na liście poniżej:
 
 \begin{itemize}
     \item Python 3.14.2
@@ -115,16 +129,16 @@ Moduły użyte w języku \textbf{Python} oraz całość użytego oprogramowania 
     \item Oracle VirtualBox 7.2.4
     \item Visual Studio Code
     \item Ubuntu Server 24.04.3 LTS
-    \item Linux Mint 22.3 Cinnamon 64bit
+    \item Linux Mint 22.3 Cinnamon 64-bit
     \item Windows 11 LTSC
     \item PuTTY
-    \item Moduły Python:
+    \item Moduły Python: 
     \begin{itemize}
         \item \texttt{socket}
-        \item \texttt{threading}
+        \item \texttt{threading} 
         \item \texttt{random}
-        \item \texttt{string}
-        \item \texttt{os}
+        \item \texttt{string} 
+        \item \texttt{os} 
         \item \texttt{time}
     \end{itemize}
 \end{itemize}

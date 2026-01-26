@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  23 JAN 2026 10:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.12.15)  26 JAN 2026 09:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -785,7 +785,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 213.
  (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<figures/ur.jpg, id=83, 134.00063pt x 134.00063pt>
+<figures/ur.jpg, id=95, 134.00063pt x 134.00063pt>
 File: figures/ur.jpg Graphic file (type jpg)
 <use figures/ur.jpg>
 Package pdftex.def Info: figures/ur.jpg  used on input line 213.
@@ -852,30 +852,15 @@ Rozdzia\l  3.
 (C:\Users\PC\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 16.
-
-Overfull \hbox (14.81314pt too wide) in paragraph at lines 36--37
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (10.01309pt too wide) in paragraph at lines 37--39
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[9
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 22.
+ [9
 
 
 
 
 ]
-Overfull \hbox (10.01309pt too wide) in paragraph at lines 60--61
+Overfull \hbox (14.81314pt too wide) in paragraph at lines 74--75
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (24.41324pt too wide) in paragraph at lines 101--102
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [10]) [11]
@@ -883,17 +868,17 @@ Overfull \hbox (24.41324pt too wide) in paragraph at lines 101--102
 
  (chapters/chapter004.tex
 Rozdzia\l  4.
-<figures/4.1.png, id=234, 1084.05pt x 639.13782pt>
+<figures/4.1.png, id=257, 1084.05pt x 639.13782pt>
 File: figures/4.1.png Graphic file (type png)
 <use figures/4.1.png>
 Package pdftex.def Info: figures/4.1.png  used on input line 8.
 (pdftex.def)             Requested size: 341.43437pt x 201.30022pt.
-<figures/4.2.png, id=237, 1084.05pt x 640.64343pt>
+<figures/4.2.png, id=260, 1084.05pt x 640.64343pt>
 File: figures/4.2.png Graphic file (type png)
 <use figures/4.2.png>
 Package pdftex.def Info: figures/4.2.png  used on input line 16.
 (pdftex.def)             Requested size: 341.43437pt x 201.77441pt.
-<figures/4.3.png, id=239, 1084.05pt x 638.385pt>
+<figures/4.3.png, id=262, 1084.05pt x 638.385pt>
 File: figures/4.3.png Graphic file (type png)
 <use figures/4.3.png>
 Package pdftex.def Info: figures/4.3.png  used on input line 25.
@@ -907,12 +892,36 @@ Underfull \vbox (badness 2961) has occurred while \output is active []
 
 
  <./figures/4.1.png> <./figures/4.2.png>]
-<figures/4.4.png, id=249, 1084.05pt x 636.87938pt>
+<figures/4.4.png, id=272, 1084.05pt x 636.87938pt>
 File: figures/4.4.png Graphic file (type png)
 <use figures/4.4.png>
 Package pdftex.def Info: figures/4.4.png  used on input line 33.
 (pdftex.def)             Requested size: 341.43437pt x 200.58891pt.
-) [13 <./figures/4.3.png> <./figures/4.4.png>]
+<figures/4.5.png, id=274, 1084.05pt x 677.53125pt>
+File: figures/4.5.png Graphic file (type png)
+<use figures/4.5.png>
+Package pdftex.def Info: figures/4.5.png  used on input line 41.
+(pdftex.def)             Requested size: 341.43437pt x 213.39246pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13 <./figures/4.3.png> <./figures/4.4.png>]
+<figures/4.6.png, id=287, 1084.05pt x 677.53125pt>
+File: figures/4.6.png Graphic file (type png)
+<use figures/4.6.png>
+Package pdftex.def Info: figures/4.6.png  used on input line 51.
+(pdftex.def)             Requested size: 341.43437pt x 213.39246pt.
+<figures/4.7.png, id=288, 1084.05pt x 677.53125pt>
+File: figures/4.7.png Graphic file (type png)
+<use figures/4.7.png>
+Package pdftex.def Info: figures/4.7.png  used on input line 56.
+(pdftex.def)             Requested size: 341.43437pt x 213.39246pt.
+<figures/4.8.png, id=289, 1084.05pt x 677.53125pt>
+File: figures/4.8.png Graphic file (type png)
+<use figures/4.8.png>
+Package pdftex.def Info: figures/4.8.png  used on input line 61.
+(pdftex.def)             Requested size: 341.43437pt x 213.39246pt.
+ [14 <./figures/4.5.png> <./figures/4.6.png>]) [15 <./figures/4.7.png> <./figures/4.8.png>]
 \openout2 = `chapters/chapter005.aux'.
 
  (chapters/chapter005.tex
@@ -927,7 +936,7 @@ Underfull \hbox (badness 1303) in paragraph at lines 10--11
 \T1/pcr/m/n/10 python3 client.py (Linux) \T1/ptm/m/n/10 uprzed-nio prze-cho-dz¡c w od-po-wied-ni¡ ±cie»k¦ w ter-mi-
  []
 
-) [14
+) [16
 
 
 
@@ -937,7 +946,7 @@ Underfull \hbox (badness 1303) in paragraph at lines 10--11
 
  (chapters/chapter006.tex
 Rozdzia\l  6.
-) [15
+) [17
 
 
 
@@ -947,7 +956,7 @@ Rozdzia\l  6.
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
 (hyperref)                be the same. Added a new anchor on input line 245.
 
-(praca.bbl) [16
+(praca.bbl) [18
 
 
 
@@ -955,7 +964,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 \tf@lof=\write5
 \openout5 = `praca.lof'.
 
- [17
+ [19
 
 ]
 
@@ -968,20 +977,20 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `praca.out' has not changed.
-(rerunfilecheck)             Checksum: 4B26D4207832726C05C35CA3CAAC3400;3813.
+(rerunfilecheck)             Checksum: 9121D2FCFA46781DB40C6A36D41776FE;4843.
  ) 
 Here is how much of TeX's memory you used:
- 24369 strings out of 474486
- 460320 string characters out of 5745170
+ 24430 strings out of 474486
+ 461400 string characters out of 5745170
  1994542 words of memory out of 5000000
- 46102 multiletter control sequences out of 15000+600000
+ 46146 multiletter control sequences out of 15000+600000
  620560 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,13n,94p,902b,2694s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/PC/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on praca.pdf (15 pages, 1037366 bytes).
+Output written on praca.pdf (17 pages, 2452480 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 134 named destinations out of 1000 (max. 500000)
- 186 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 420 PDF objects out of 1000 (max. 8388607)
+ 151 named destinations out of 1000 (max. 500000)
+ 230 words of extra memory for PDF output out of 10000 (max. 10000000)
 

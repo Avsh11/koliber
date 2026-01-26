@@ -6,7 +6,7 @@ Podstawowym problemem, który zostanie rozwiązany przez realizację tego projek
 
 Aby problem został skutecznie rozwiązany, potencjalny zespół musi posiadać wiedzę z zakresu architektury sieciowej \textbf{TCP/IP}, modelu \textbf{ISO/OSI} (w szczególności warstwy transportowej i aplikacji) oraz podstawowej obsługi wątków.
 
-Rozwiązanie problemu przebiegło w kilku zdefiniowanych krokach. W pierwszej kolejności nastąpiło zaprojektowanie topologii sieciowej w środowisku \texttt{VirtualBox}. Kolejnym krokiem było zaimplementowanie logicznej warstwy serwera, odpowiedzialnego za akceptowanie połączeń i przesyłanie komunikatów. Następnie wdrożono obsługę wielu wątków oraz system anonimowego przydzielania identyfikatorów. Końcowym etapem było stworzenie podstawowego interfejsu \textbf{CLI} dla klientów, gdzie Ci będą mogli odróżniać wiadomości swoje od cudzych za pośrednictwem kolorów.
+Rozwiązanie problemu przebiegło w kilku zdefiniowanych krokach. W pierwszej kolejności nastąpiło zaprojektowanie topologii sieciowej w środowisku \texttt{VirtualBox}. Kolejnym krokiem było zaimplementowanie logicznej warstwy serwera, odpowiedzialnego za akceptowanie połączeń i przesyłanie komunikatów. Następnie wdrożono obsługę wielu wątków oraz system anonimowego przydzielania identyfikatorów. Końcowym etapem było stworzenie podstawowego interfejsu \textbf{CLI} dla klientów, gdzie Ci będą mogli odróżniać wiadomości swoje od cudzych za pośrednictwem kolorów. Na samym końcu dodano również możliwość przywrócenia starej konwersacji poprzez wpisanie swojego starego ID użytego wcześniej.
 
 \section{Wymagania funkcjonalne}
 \begin{itemize}
@@ -17,6 +17,7 @@ Rozwiązanie problemu przebiegło w kilku zdefiniowanych krokach. W pierwszej ko
     \item \textbf{Powiadomienia systemowe:} Program musi informować wszystkich uczestników o zmianach w strukturze sieci (dołączenia nowego użytkownika albo opuszczenie przez niego sesji).
     \item \textbf{Wizualne odróżnienie komunikatów:} Interfejs musi za pomocą kolorów odróżniać własne wiadomości od wiadomości innych użytokwników oraz komunikatów systemowych.
     \item \textbf{Automatyczne sprzątanie sesji:} Serwer musi automatycznie wykrywać rozłączanie klienta, zamykać powiązany z nim socket i zwalniać zajęte ID do ponownej puli losowania.
+    \item \textbf{Przywrócenie konwersacji:} Gdy użytkownik posiada swoje stare ID, może przywrócić treść konwersacji w której uczestniczył.
 \end{itemize}
 \section{Wymagania niefunkcjonalne}
 \begin{itemize}

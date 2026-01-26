@@ -3,7 +3,7 @@ import threading
 import random
 import string
 import os #potrzebne do obslugi plikow i sprawdzania czy historia istnieje
-import time #potrzebne do malych pauz przy wysylaniu historii zeby unuknac bledow zwiazanych z wyswietlaniem co juz sie pojawilo
+import time #potrzebne do malych pauz przy wysylaniu historii
 
 #na tej liscie przechowujemy obiekty gniazd socketow dla wszystkich aktywnych userow. Dzieki temu serwer wie do kogo rozsylac wiadomosci itd. 
 user_sockets = []
@@ -32,7 +32,7 @@ def save_to_history(message):
 
 #funkcja realizuje logike mostu/relay. Serwer iteruje po liscie aktuwnych socketow i przesyla dane. WAZNE - pominiecie sender_socket, czemu? zeby nadawaca nie otrzymal echa wlasnej wiadomosci
 def handle_broadcast(message_bytes, sender_socket):
-    # Uzywamy [:] aby iterowac po kopii listy. Zapobiega to bledom gdy usuwamy martwy socket w trakcie trwania petli!
+    # --- ZMIANA: Przenioslem zapis do pliku nizej, aby logowac tylko czat, nie system ---
     for user_socket in user_sockets[:]:
         if user_socket != sender_socket:
             try:
@@ -60,12 +60,14 @@ def handle_client(user, client_address):
             if len(parts) > 1 and parts[1] != "":
                 session_id = parts[1]
                 found_in_logs = False
+                
                 #najpierw sprawdzamy czy ID w ogole wystepuje w pliku
                 if os.path.exists("chat_history.txt"):
                     with open("chat_history.txt", "r", encoding='utf-8') as file:
                         if session_id in file.read():
                             found_in_logs = True
-                #jesli znaleziono i ID nie jest zajete przez kogos online - przywracamy caly czat ogolnie trzymamy wszystko wj ednym pliku bo wedlug koncepcji jest to czat globalny ALE, jesli stare Id sobie przyeworci konwersacje - zobaczy ja ale gdy nowe id dolaczy do tej konwersacji ot nie zobaczy jej. Jest to poprawne
+                
+                #jesli znaleziono i ID nie jest zajete przez kogos online - przywracamy caly czat
                 if found_in_logs and session_id not in assigned_id:
                     with open("chat_history.txt", "r", encoding='utf-8') as file:
                         for line in file:
@@ -73,7 +75,7 @@ def handle_client(user, client_address):
                             user.send(("HIST:" + line.strip() + "\n").encode('utf-8'))
                             time.sleep(0.01)
                 else:
-                    #jesli ID nie ma w logach lub ktos go uzywa losujemy nowe
+                    #jesli ID nie ma w logach lub ktos go uzywa, losujemy nowe
                     session_id = generate_id()
                     while session_id in assigned_id:
                         session_id = generate_id()
@@ -89,7 +91,7 @@ def handle_client(user, client_address):
 
     assigned_id.append(session_id)
     
-    #wysylamy informacje o przydzielonym id do usera!!!
+    #Wysylamy informacje o przydzielonym id do usera!!!
     user.send(("SET_ID:" + session_id + "\n").encode('utf-8'))
     
     #info systemowe o nowym gosciu - po steonie usera
@@ -110,7 +112,7 @@ def handle_client(user, client_address):
             text = data.decode('utf-8')
             full_message = "Anon#" + session_id + ": " + text
             
-            # --- ZAPISUJEMY DO LOGOW TYLKO CZAT ---
+            # --- ZAPISUJEMY DO LOGOW TYLKO WIADOMOSCI ---
             save_to_history(full_message)
             
             handle_broadcast(full_message.encode('utf-8'), user)
@@ -151,3 +153,139 @@ while True:
     user_sockets.append(conn)
     thread = threading.Thread(target=handle_client, args=(conn, client_address))
     thread.start()
+
+
+
+    import socket
+import threading
+import os
+import time
+
+#kody ansi - to wziete z internetu, po co? zeby sterowac terminalem bez bibliotek.
+#gdzie zielony to kolor z perspektywy usera, czerwony - komunikat o odejsciu, zolty o dolaczeniu, reszta kolejno reset powrot do standardowych ustawien terminala, bold pogrubienie tekstu zeby zwiekszyc cyztelnosc, up przesuniecie o linie w gore zeby nadpisywac input
+GREEN = "\033[92m"
+RED = "\033[91m"
+YELLOW = "\033[93m"
+RESET = "\033[0m"
+BOLD = "\033[1m"
+UP = "\033[F"
+CLEAR = "\033[K"
+
+#zmienna globalna przechowujaca stan tozsamosci sesji
+my_id = "???"
+#lista pomocnicza do przetrzymania historii zanim wyswietlimy logo
+history_buffer = []
+
+#funkcja dekoracyjna, rozpoznaje system operacyjny i czysci ekran/
+def decoration():
+    if os.name == 'nt':
+        #ta linijka wlacza kolory ANSI na nowym terminalu Windows 11
+        os.system('')
+        os.system('cls')
+    else:
+        os.system('clear')
+#wyswietlenie loga ascii: czym robione: https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type+&x=none&v=4&h=4&w=80&we=false
+ASCII_LOGO = """[TWOJE LOGO ASCII TUTAJ]"""
+
+# --- PYTANIE O SESJE (Wymaganie wykladowcy) ---
+print("--- KOLIBER RELAY SYSTEM ---")
+choice = input("Czy chcesz rozpoczac nowa sesje? (T/N): ").upper().strip()
+
+#tworzymy obiekt socketu i probojemy nawiazac sesji tcp z serwerem - socket.SOCK_STREAM TCP
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+client.connect(('192.168.10.1', 55555))
+
+#informujemy serwer co wybralsmy
+if choice == "T" or choice == "":
+    client.send("NEW".encode('utf-8'))
+else:
+    #strip usuwa spacje, upper robi duze litery
+    old_id = input("Podaj swoje stare ID sesji: ").upper().strip()
+    if old_id == "":
+        #jesli jednak dal enter przy ID, to tez robimy nowa sesje
+        client.send("NEW".encode('utf-8'))
+    else:
+        client.send(("OLD:" + old_id).encode('utf-8'))
+
+#funkcja do odebrania watku odiborczego, musi dzialac rownolegle bo input() blokuje glowny program
+def handle_messages():
+    global my_id
+    while True:
+        try:
+            #oczekujemy na dane przychodzace z serwera
+            received_bytes = client.recv(1024)
+            if not received_bytes:
+                break
+                
+            #rozbijamy dane na linie, bo serwer moze wyslac kilka wiadomosci naraz (szczegolnie historie)
+            raw_data = received_bytes.decode('utf-8')
+            messages = raw_data.split('\n')
+            
+            for message in messages:
+                if not message: continue
+
+                #sprawdzamy czy otrzyywany ciag jest instrukcja sterujaca SET_ID
+                if message.startswith("SET_ID:"):
+                    #wydobujemy id
+                    my_id = message.split(":")[1]
+                
+                #odbieranie archiwalnych wiadomosci powiazanych z naszym id
+                elif message.startswith("HIST:"):
+                    #zamiast drukowac, zapisujemy do bufora
+                    history_buffer.append(message.replace("HIST:", ""))
+
+                #filtrujmey powiadomienie o dolaczeniu 
+                elif "dolaczyl" in message:
+                    print("\r" + CLEAR + YELLOW + BOLD + message + RESET)
+                    print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+
+                #filtrujemy powiadomienie o odejsciu -78line w serverpy
+                elif "wyszedl" in message:
+                    print("\r" + CLEAR + RED + BOLD + message + RESET)
+                    print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+                
+                else:
+                    print("\r" + CLEAR + message)
+                    print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
+                
+        except Exception as e:
+            print("ERROR: odebranie wiadomosci" + str(e))
+            break
+
+#start watku, natomaist daemon = True gwarantuje ze watek zakonczy sie po zamknieciu okna
+receive_handler = threading.Thread(target=handle_messages)
+receive_handler.daemon = True
+receive_handler.start()
+
+#program wstrzymuje wykonanie dopoki zmienna my_id nie zostanie zaktualizowana przez watek po tym jak zrobi "handshake" z serwerem.
+while my_id == "???":
+    time.sleep(0.1)
+
+#wywolujemy metode decoration() do wykasowania terminala i wyswietlamy logo 
+decoration()
+print(ASCII_LOGO)
+
+#jesli mamy cos w buforze historii, wypisujemy to TERAZ (po wyczyszczeniu ekranu)
+if history_buffer:
+    print(YELLOW + "--- WCZESNIEJSZA ROZMOWA ---" + RESET)
+    for h_line in history_buffer:
+        print(h_line)
+    print(YELLOW + "----------------------------" + RESET)
+
+while True:
+    try:
+        #znak zachety
+        current_prompt = GREEN + "TY (ID-" + my_id + "): " + RESET
+        user_input = input(current_prompt)
+        #jak nacisniemy enter to terminal zostawia wpisany tekst potem uzwamy up i clear aby go wymazac i zastapic lepszym formatowaniem.
+        if user_input:
+            print(UP + "\r" + CLEAR + GREEN + "TY (ID-" + my_id + "): " + user_input + RESET)
+            #wysylamy tekst zmieniony na strumein bajtow 
+            client.send(user_input.encode('utf-8'))
+            
+    except Exception as e:
+        #obsluga bledu jakby np zerwalo polaczenie z brama
+        print("ERROR: blad wyslania " + str(e))
+        break
+
+client.close()
