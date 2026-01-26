@@ -69,41 +69,33 @@ def handle_messages():
     global my_id
     while True:
         try:
-            #oczekujemy na dane przychodzace z serwera - zwiekszylem bufor dla historii
+            #oczekujemy na dane przychodzace z serwera
             received_bytes = client.recv(4096)
             if not received_bytes:
                 break
-                
-            #dekodujemy i rozbijamy pakiety po znaku nowej linii
             raw_data = received_bytes.decode('utf-8')
             messages = raw_data.split('\n')
             
             for msg in messages:
                 if not msg: continue
-
                 #sprawdzamy czy otrzyywany ciag jest instrukcja sterujaca SET_ID
                 if msg.startswith("SET_ID:"):
                     #wydobujemy id
                     my_id = msg.split(":")[1].strip()
-                
-                #odbieranie archiwalnych wiadomosci powiazanych z naszym id
+                #odbieranie archiwalnych wiadomosci powiazanych z id
                 elif msg.startswith("HIST:"):
                     #zapisujemy do bufora zamiast od razu drukowac (zeby logo nie zamazalo)
                     history_buffer.append(msg.replace("HIST:", "").strip())
-
                 #filtrujmey powiadomienie o dolaczeniu 
                 elif "dolaczyl" in msg:
                     print("\r" + CLEAR + YELLOW + BOLD + msg + RESET)
                     print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
-
                 #filtrujemy powiadomienie o odejsciu -78line w serverpy
                 elif "wyszedl" in msg:
-                    # --- NAPRAWIONO BLAD: msg zamiast message ---
                     print("\r" + CLEAR + RED + BOLD + msg + RESET)
                     print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
                 
                 else:
-                    #Zwykla wiadomosc od innego usera- \r i flush naprawiaja laga na windows
                     print("\r" + CLEAR + msg)
                     print(GREEN + "TY (ID-" + my_id + "): " + RESET, end="", flush=True)
                 

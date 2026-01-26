@@ -2,8 +2,8 @@ import socket
 import threading
 import random
 import string
-import os #potrzebne do obslugi plikow i sprawdzania czy historia istnieje
-import time #potrzebne do malych pauz przy wysylaniu historii zeby unuknac bledow zwiazanych z wyswietlaniem co juz sie pojawilo
+import os 
+import time 
 
 #na tej liscie przechowujemy obiekty gniazd socketow dla wszystkich aktywnych userow. Dzieki temu serwer wie do kogo rozsylac wiadomosci itd. 
 user_sockets = []
@@ -32,7 +32,7 @@ def save_to_history(message):
 
 #funkcja realizuje logike mostu/relay. Serwer iteruje po liscie aktuwnych socketow i przesyla dane. WAZNE - pominiecie sender_socket, czemu? zeby nadawaca nie otrzymal echa wlasnej wiadomosci
 def handle_broadcast(message_bytes, sender_socket):
-    # Uzywamy [:] aby iterowac po kopii listy. Zapobiega to bledom gdy usuwamy martwy socket w trakcie trwania petli!
+    # Uzywamy : aby iterowac po kopii listy. Zapobiega to bledom gdy usuwamy martwy socket w trakcie trawnia petli!!!
     for user_socket in user_sockets[:]:
         if user_socket != sender_socket:
             try:
@@ -102,7 +102,7 @@ def handle_client(user, client_address):
         try:
             #1024 rozmiar bufora
             data = user.recv(1024)
-            #jesli klient wysle pusty pakiet oznacza to zadanie zamkniecia polaczenia juz. czyli jak np zamknie okno terminala
+            #jesli klient wysle pustys pakiet oznacza to zadanie zamkniecia polaczenia juz. czyli jak np zamknie okno terminala
             if not data:
                 break
             
@@ -110,7 +110,7 @@ def handle_client(user, client_address):
             text = data.decode('utf-8')
             full_message = "Anon#" + session_id + ": " + text
             
-            # --- ZAPISUJEMY DO LOGOW TYLKO CZAT ---
+            #do logow leci tylk oczat
             save_to_history(full_message)
             
             handle_broadcast(full_message.encode('utf-8'), user)
