@@ -1,0 +1,3 @@
+Prosty komunikator stworzony w języku Python, wykorzystujący moduły socket do obsługi gniazd oraz threading dla obsługi wielowątkowości. Komunikator wykorzystuje protokół TCP do przesyłania wiadomości i pozwala na podstawowe przywracanie historii rozmów na podstawie identyfikatora sesji użytkownika, przydzielanego losowo po rozpoczęciu sesji.
+
+A simple communicator created in Python, using socket and threading modules. The messenger uses the TCP protocol to transmit messages and allows basic conversation history recovery based on the user's session ID, which is randomly assigned when the session starts.
